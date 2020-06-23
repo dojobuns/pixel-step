@@ -5,20 +5,21 @@ const Game = function() {
         friction: 0.9,
         gravity: 3,
         player: new Game.Player(),
-        note: new Game.Note(0),
-        note2: new Game.Note(-10),
-        note3: new Game.Note(-20),
         noteArr: [],
         height: 128,
         width: 128,
+        score: 0,
 
         fillNoteArr:function() {
             let y = 0;
             while(this.noteArr.length < 30) {
                 this.noteArr.push(new Game.Note(y))
                 y -= 20;
-                debugger;
             }
+        },
+
+        scoreUpdate() {
+            this.score += (100 / this.noteArr.length);
         },
 
         collideObject:function(object){
@@ -46,9 +47,6 @@ const Game = function() {
 
             this.player.velocity_x *= this.friction;
             this.player.velocity_y *= this.friction;
-
-            this.note.update();
-            this.note2.update();
 
             this.noteArr.forEach(note => {
                 note.update();

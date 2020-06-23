@@ -5,7 +5,6 @@ const Engine = require('./scripts/engine');
 const Game = require('./scripts/game');
 
 window.addEventListener('load', function(e) {
-    'use strict';
 
     let keyDownUp = function(e) {
         controller.keyDownUp(e.type, e.keyCode);
@@ -21,6 +20,14 @@ window.addEventListener('load', function(e) {
         // display.fill(game.world.background_color);// Clear background to game's background color.
         // display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
         // noteDrop();
+
+        game.world.noteArr.forEach(note => {
+            if(note.x >= game.world.player.x && note.x <= game.world.player.x + 14 && note.y >= game.world.player.y && note.y <= game.world.player.y + 4){
+                game.world.scoreUpdate();
+                console.log(game.world.score);
+            }
+        })
+
         display.render();
     
     };
@@ -28,10 +35,16 @@ window.addEventListener('load', function(e) {
     let update = function() {
         if(controller.left.active) {
             game.world.player.moveLeft();
+            // console.log(game.world.player.x);
+            // console.log(game.world.player.x + 14);
+            // console.log(game.world.noteArr[1].y)
         }
 
         if(controller.right.active){
             game.world.player.moveRight();
+            // console.log(game.world.player.x);
+            // console.log(game.world.player.x + 14);
+            // console.log(game.world.noteArr[1].y)
         }
 
         // if(controller.up.active){
@@ -44,20 +57,15 @@ window.addEventListener('load', function(e) {
 
     let noteDrop = function() {
         display.fill(game.world.background_color);
-        
-        //     display.drawNote(game.world.note2);
-        // if(game.world.note.y < 130){
-        //     display.drawNote(game.world.note);
-        // }
 
         game.world.noteArr.forEach(note => {
             if(note.y < 120){
                 display.drawNote(note);
             }
         })
-        // debugger;
 
         display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
+
         display.render();
     }
 
