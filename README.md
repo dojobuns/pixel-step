@@ -39,3 +39,4 @@ In Beat Step, users will be able to:
 - [ ] shows score on top right of screen and updates as you catch
 
 # Wireframe
+![beat-step-wireframe](https://github.com/dojobuns/beat_step/blob/master/src/images/beat-step-wireframe.png)
