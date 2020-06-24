@@ -4,7 +4,7 @@ const Display = require('./scripts/display');
 const Engine = require('./scripts/engine');
 const Game = require('./scripts/game');
 
-window.addEventListener('load', function(e) {
+document.addEventListener('DOMContentLoaded', function(e) {
 
     let keyDownUp = function(e) {
         controller.keyDownUp(e.type, e.keyCode);
@@ -21,10 +21,40 @@ window.addEventListener('load', function(e) {
         // display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
         // noteDrop();
 
+        document.getElementById('score-container').innerHTML = (game.world.score === 0) ? (
+            '0%'
+        ) : (
+            (game.world.score.toFixed(2)).toString() + '%'
+        ) 
+
         game.world.noteArr.forEach(note => {
-            if(note.x >= game.world.player.x && note.x <= game.world.player.x + 14 && note.y >= game.world.player.y && note.y <= game.world.player.y + 4){
+            if(note.x >= game.world.player.x && note.x <= game.world.player.x + 24 && note.y >= game.world.player.y && note.y <= game.world.player.y + 4 && !note.hit){
                 game.world.scoreUpdate();
-                console.log(game.world.score);
+                note.hit = true;
+                // debugger;
+                note.sound.play();
+                // console.log(note.sound);
+                // debugger;
+            }
+        })
+
+        game.world.bassNoteArr.forEach(note => {
+            if(note.x >= game.world.player.x && note.x <= game.world.player.x + 24 && note.y >= game.world.player.y && note.y <= game.world.player.y + 4 && !note.hit){
+                game.world.scoreUpdate();
+                note.hit = true;
+                note.sound.play();
+                // console.log(note.sound);
+                // debugger;
+            }
+        })
+
+        game.world.eightNoteArr.forEach(note => {
+            if(note.x >= game.world.player.x && note.x <= game.world.player.x + 24 && note.y >= game.world.player.y && note.y <= game.world.player.y + 4 && !note.hit){
+                game.world.scoreUpdate();
+                note.hit = true;
+                note.sound.play();
+                // console.log(note.sound);
+                // debugger;
             }
         })
 
@@ -61,6 +91,22 @@ window.addEventListener('load', function(e) {
         game.world.noteArr.forEach(note => {
             if(note.y < 120){
                 display.drawNote(note);
+                if(game.world.noteArr[game.world.noteArr.length - 1].y > 118){
+                    game.world.gameEndMessage();
+                    game.world.gameEnd();
+                }
+            }
+        })
+
+        game.world.bassNoteArr.forEach(note => {
+            if(note.y < 120) {
+                display.drawNote(note);
+            }
+        })
+
+        game.world.eightNoteArr.forEach(note => {
+            if(note.y < 120) {
+                display.drawNote(note);
             }
         })
 
@@ -82,9 +128,27 @@ window.addEventListener('load', function(e) {
     window.addEventListener('resize', resize);
 
     resize();
-    game.world.fillNoteArr();
     // debugger;
-    setInterval(() => noteDrop(), 100);
+    
+    display.fill(game.world.background_color);
+
+    document.getElementById('end-menu').classList.add('playing');
+
+    document.body.onkeyup = function(e){
+        if(e.keyCode == 32){
+            game.world.restartGame();
+            game.world.fillNoteArr();
+            game.world.fillBassArr();
+            game.world.fillEightArr();
+
+            document.getElementById('start-menu').classList.add('playing');
+            if(!document.getElementById('end-menu').classList.contains('playing')){
+                document.getElementById('end-menu').classList.add('playing');
+            }
+
+            setInterval(() => noteDrop(), 1);
+        }
+    }
 
     engine.start();
 });

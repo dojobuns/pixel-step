@@ -35,6 +35,7 @@ const Display = function(canvas){
 
         this.context.imageSmoothingEnabled = false;
     };
+    
 };
 
 Display.prototype = {
