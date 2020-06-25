@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     
     display.fill(game.world.background_color);
 
+    document.getElementById('score-container').classList.add('playing');
     document.getElementById('end-menu').classList.add('playing');
     document.getElementById('tremor').classList.add('playing');
     document.getElementById('naruto').classList.add('playing');
@@ -147,6 +148,10 @@ document.addEventListener('DOMContentLoaded', function(e) {
             if(game.world.backgroundTrack.paused) {
                 game.world.backgroundTrack.play();
             }
+
+            if(!document.getElementById('score-container').classList.contains('playing')) {
+                document.getElementById('score-container').classList.add('playing');
+            }
         }
 
         if(e.keyCode === 80) {
@@ -164,10 +169,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
             game.world.fillBassArr();
             game.world.fillEightArr();
             game.world.backgroundTrack.pause();
+
             document.getElementById('start-menu').classList.add('playing');
-            
             document.getElementById('tremor').classList.add('playing');
             document.getElementById('naruto').classList.add('playing');
+
+            document.getElementById('score-container').classList.remove('playing');
 
             setInterval(() => noteDrop(), 1);
     })
@@ -176,10 +183,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
         game.world.restartGame();
             game.world.fillNarutoNote();
             game.world.backgroundTrack.pause();
-            document.getElementById('start-menu').classList.add('playing');
 
+            document.getElementById('start-menu').classList.add('playing');
             document.getElementById('tremor').classList.add('playing');
             document.getElementById('naruto').classList.add('playing');
+
+            document.getElementById('score-container').classList.remove('playing');
 
             setInterval(() => noteDrop(), 1);
     })
