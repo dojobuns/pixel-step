@@ -74,7 +74,13 @@ const Game = function() {
         ],
 
         narutoMelodyArr: [
-            'b3.mp3', 'a3.mp3', 'b3.mp3', 'd.mp3'
+            'b3.mp3', 'a3.mp3', 'b3.mp3', 'd.mp3', 'a3.mp3', 'b3.mp3', 'a3.mp3', 'b3.mp3', 'd.mp3', 'a3.mp3', 'b3.mp3',
+            'd.mp3', 'a3.mp3', 'd.mp3', 'e.mp3', 'a3.mp3', 'e.mp3', 'fs.mp3', 'g.mp3', 'fs.mp3', 'e.mp3', 'd.mp3',
+            'g5.mp3', 'fs5.mp3', 'd5.mp3', 'g5.mp3', 'fs5.mp3', 'd5.mp3', 'g5.mp3', 'fs5.mp3', 'd5.mp3', 'e5.mp3', 'fs5.mp3', //33
+
+            'cs5.mp3', 'fs.mp3', 'd.mp3', 'e.mp3', 'fs.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', 'a.mp3', 'a.mp3', //46
+            'e.mp3', 'cs.mp3', 'e.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //56
+            'd.mp3',
         ],
         narutoBassArr: [
 
@@ -83,7 +89,12 @@ const Game = function() {
 
         ],
         narutoXPosArr: [
-            70, 65, 70, 80
+            50, 45, 50, 60, 45, 50, 45, 50, 60, 45, 50,
+            60, 45, 60, 65, 45, 65, 75, 80, 75, 65, 60,
+            115, 110, 100, 115, 110, 100, 115, 110, 100, 105, 110,
+            95, 75, 60, 65, 75, 60, 75, 75, 65, 60, 65, 85, 85,
+            65, 55, 65, 60, 85, 80, 60, 85, 80, 60,
+            60,
         ],
         narutoxBassPosArr:[
 
@@ -101,6 +112,18 @@ const Game = function() {
 
                 if(count < 4){
                     y -= 5;
+                } else if(count === 4 || count === 25 || count === 26 || count === 29 || count === 30 || count === 32 || count === 33 || count === 46){
+                    y -= 15;
+                } else if((count >= 5 && count <= 8) || count === 10 || count === 20 || count === 21 || (count >= 40 && count <= 43) || count === 45){
+                    y -= 5;
+                } else if(count === 9 || (count >= 11 && count <= 12) || (count >= 14 && count <= 15) || count === 17 || count === 18 || count === 19 || count === 22 || count === 23){
+                    y -= 15;
+                } else if (count === 13 || count === 16 || count === 24 || count === 27 || count === 31 || (count >= 34 && count <= 37) || count === 39 || count === 44 || (count >= 47 && count <= 49) || (count >= 51 && count <= 52) || (count >= 54 && count <= 55)) {
+                    y -= 10;
+                } else if (count === 28 || count === 38) {
+                    y -= 30;
+                } else if(count === 50 || count === 53 || (count >= 56 && count <= 57)){
+                    y -= 20;
                 }
             }
         },

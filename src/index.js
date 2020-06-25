@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('tremor').classList.remove('playing');
             document.getElementById('naruto').classList.remove('playing');
 
+            if(document.getElementById('pixel-logo').classList.contains('playing')){
+                document.getElementById('pixel-logo').classList.remove('playing');
+            }
+
             if(!document.getElementById('end-menu').classList.contains('playing')){
                 document.getElementById('end-menu').classList.add('playing');
             }
@@ -171,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
             game.world.backgroundTrack.pause();
 
             document.getElementById('start-menu').classList.add('playing');
+            document.getElementById('pixel-logo').classList.add('playing');
             document.getElementById('tremor').classList.add('playing');
             document.getElementById('naruto').classList.add('playing');
 
@@ -185,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
             game.world.backgroundTrack.pause();
 
             document.getElementById('start-menu').classList.add('playing');
+            document.getElementById('pixel-logo').classList.add('playing');
             document.getElementById('tremor').classList.add('playing');
             document.getElementById('naruto').classList.add('playing');
 

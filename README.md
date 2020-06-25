@@ -40,3 +40,6 @@ In Beat Step, users will be able to:
 
 # Wireframe
 ![beat-step-wireframe](https://github.com/dojobuns/beat_step/blob/master/src/images/beat-step-wireframe.png)
+
+# Credits
+* Music: Eric Skiff - Song Name - A Night Of Dizzy Spells
