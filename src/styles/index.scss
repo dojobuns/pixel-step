@@ -2,15 +2,49 @@
     position: absolute;
     color: yellow;
     font-size: 36px;
+    margin-top: 10px;
     font-family: 'Press Start 2P', cursive;
+}
+
+#tremor {
+    position: absolute;
+    color: yellow;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-top: 300px;
+    margin-left: -200px;
+    height: 30px;
+    width: 220px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
+#my-peak-meter {
+    position: absolute;
+}
+
+#naruto {
+    position: absolute;
+    color: yellow;
+    font-size: 36px;
+    margin-top: 300px;
+    margin-left: 200px;
+    height: 30px;
+    width: 210px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+
 }
 
 #start-menu{
     position: absolute;
     color: yellow;
     font-size: 40px;
+    height: 300px;
+    width: 600px;
+    text-align: center;
     font-family: 'Press Start 2P', cursive;
-    margin-top: 280px;
+    margin-top: 380px;
 }
 
 #end-menu{
@@ -19,7 +53,7 @@
     font-size: 40px;
     width: 700px;
     font-family: 'Press Start 2P', cursive;
-    margin-top: 280px;
+    margin-top: 380px;
     text-align: center;
 }
 

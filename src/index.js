@@ -3,6 +3,7 @@ const Controller = require('./scripts/controller');
 const Display = require('./scripts/display');
 const Engine = require('./scripts/engine');
 const Game = require('./scripts/game');
+var webAudioPeakMeter = require('web-audio-peak-meter');
 
 document.addEventListener('DOMContentLoaded', function(e) {
 
@@ -31,10 +32,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
             if(note.x >= game.world.player.x && note.x <= game.world.player.x + 24 && note.y >= game.world.player.y && note.y <= game.world.player.y + 4 && !note.hit){
                 game.world.scoreUpdate();
                 note.hit = true;
-                // debugger;
                 note.sound.play();
-                // console.log(note.sound);
-                // debugger;
+                game.world.player.hitNote();
             }
         })
 
@@ -43,8 +42,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
                 game.world.scoreUpdate();
                 note.hit = true;
                 note.sound.play();
-                // console.log(note.sound);
-                // debugger;
+                game.world.player.hitNote();
             }
         })
 
@@ -53,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
                 game.world.scoreUpdate();
                 note.hit = true;
                 note.sound.play();
-                // console.log(note.sound);
-                // debugger;
+                game.world.player.hitNote();
             }
         })
 
@@ -89,23 +86,23 @@ document.addEventListener('DOMContentLoaded', function(e) {
         display.fill(game.world.background_color);
 
         game.world.noteArr.forEach(note => {
-            if(note.y < 120){
+            if(note.y < 120 && !note.hit){
                 display.drawNote(note);
-                if(game.world.noteArr[game.world.noteArr.length - 1].y > 118){
-                    game.world.gameEndMessage();
-                    game.world.gameEnd();
-                }
+            } else if(game.world.noteArr[game.world.noteArr.length - 1].y > 118){
+                game.world.gameEndMessage();
+                game.world.gameEnd();
+                game.world.backgroundTrack.play();
             }
         })
 
         game.world.bassNoteArr.forEach(note => {
-            if(note.y < 120) {
+            if(note.y < 120 && !note.hit) {
                 display.drawNote(note);
             }
         })
 
         game.world.eightNoteArr.forEach(note => {
-            if(note.y < 120) {
+            if(note.y < 120 && !note.hit) {
                 display.drawNote(note);
             }
         })
@@ -133,22 +130,70 @@ document.addEventListener('DOMContentLoaded', function(e) {
     display.fill(game.world.background_color);
 
     document.getElementById('end-menu').classList.add('playing');
+    document.getElementById('tremor').classList.add('playing');
+    document.getElementById('naruto').classList.add('playing');
 
     document.body.onkeyup = function(e){
-        if(e.keyCode == 32){
+        if(e.keyCode === 32){
             game.world.restartGame();
-            game.world.fillNoteArr();
-            game.world.fillBassArr();
-            game.world.fillEightArr();
-
             document.getElementById('start-menu').classList.add('playing');
+            document.getElementById('tremor').classList.remove('playing');
+            document.getElementById('naruto').classList.remove('playing');
+
             if(!document.getElementById('end-menu').classList.contains('playing')){
                 document.getElementById('end-menu').classList.add('playing');
             }
 
-            setInterval(() => noteDrop(), 1);
+            if(game.world.backgroundTrack.paused) {
+                game.world.backgroundTrack.play();
+            }
+        }
+
+        if(e.keyCode === 80) {
+            if(!game.world.backgroundTrack.paused){
+                game.world.backgroundTrack.pause();
+            } else {
+                game.world.backgroundTrack.play();
+            }
         }
     }
 
+    document.getElementById('tremor').addEventListener('click', () => {
+        game.world.restartGame();
+            game.world.fillNoteArr();
+            game.world.fillBassArr();
+            game.world.fillEightArr();
+            game.world.backgroundTrack.pause();
+            document.getElementById('start-menu').classList.add('playing');
+            
+            document.getElementById('tremor').classList.add('playing');
+            document.getElementById('naruto').classList.add('playing');
+
+            setInterval(() => noteDrop(), 1);
+    })
+
+    document.getElementById('naruto').addEventListener('click', () => {
+        game.world.restartGame();
+            game.world.fillNarutoNote();
+            game.world.backgroundTrack.pause();
+            document.getElementById('start-menu').classList.add('playing');
+
+            document.getElementById('tremor').classList.add('playing');
+            document.getElementById('naruto').classList.add('playing');
+
+            setInterval(() => noteDrop(), 1);
+    })
+    game.world.backgroundTrack.loop = true;
+    game.world.backgroundTrack.volume = 0.3;
+    game.world.backgroundTrack.play();
+    
+    // var myMeterElement = document.getElementById('my-peak-meter');
+    // var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // var sourceNode = audioCtx.createMediaElementSource(game.world.backgroundTrack);
+    // sourceNode.connect(audioCtx.destiation);
+    // var meterNode = webAudioPeakMeter.createMeterNode(sourceNode, audioCtx);
+    // webAudioPeakMeter.createMeter(myMeterElement, meterNode, {});
+
     engine.start();
+
 });

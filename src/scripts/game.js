@@ -11,6 +11,8 @@ const Game = function() {
         height: 128,
         width: 150,
         score: 0,
+        backgroundTrack: new Audio('Eric Skiff - A Night Of Dizzy Spells.mp3'),
+
         melodyArr: [
             'a.mp3', 'gs.mp3', 'g.mp3', 'fs.mp3', 'fs.mp3', 'gs.mp3', 'a.mp3', 'fs.mp3', 'fs5.mp3', 
             'fs.mp3', 'e.mp3', 'cs.mp3', 'b3.mp3', 'b3.mp3', 'cs.mp3', 'b3.mp3', 'a3.mp3', 'fs3.mp3',
@@ -71,6 +73,38 @@ const Game = function() {
             60, 55, 50, 40, 85, 80, 78, 75, 60,
         ],
 
+        narutoMelodyArr: [
+            'b3.mp3', 'a3.mp3', 'b3.mp3', 'd.mp3'
+        ],
+        narutoBassArr: [
+
+        ],
+        narutoEightArr: [
+
+        ],
+        narutoXPosArr: [
+            70, 65, 70, 80
+        ],
+        narutoxBassPosArr:[
+
+        ],
+        narutoxEightPosArr:[
+
+        ],
+
+        fillNarutoNote:function(){
+            let y = 0;
+            let count = 0;
+            while(this.noteArr.length < this.narutoMelodyArr.length){
+                this.noteArr.push(new Game.Note(this.narutoXPosArr[count], y, this.narutoMelodyArr[count]));
+                count += 1;
+
+                if(count < 4){
+                    y -= 5;
+                }
+            }
+        },
+
         restartGame: function(){
             this.noteArr = [];
             this.bassNoteArr = [];
@@ -84,7 +118,8 @@ const Game = function() {
 
         gameEndMessage:function(){
             let message = '';
-            if(this.score === 100){
+            // debugger;
+            if(this.score > 99){
                 message = 'WOW! PERFECT SCORE! PRESS SPACEBAR TO TRY AGAIN'
             } else if(this.score >= 90 && this.score <= 99){
                 message = 'SO CLOSE TO PERFECTION! PRESS SPACEBAR TO TRY AGAIN'
@@ -102,7 +137,7 @@ const Game = function() {
         fillNoteArr:function() {
             let y = 0;
             let count = 0;
-            while(this.noteArr.length < 102) {
+            while(this.noteArr.length < this.melodyArr.length) {
                 this.noteArr.push(new Game.Note(this.xPosArr[count], y, this.melodyArr[count]));
                 count += 1;
 
@@ -150,7 +185,7 @@ const Game = function() {
             // debugger;
             let y = 0;
             let count = 0;
-            while(this.bassNoteArr.length < 16) {
+            while(this.bassNoteArr.length < this.bassArr.length) {
                 this.bassNoteArr.push(new Game.Note(this.xBassPosArr[count], y, this.bassArr[count]));
                 count += 1;
                 // console.log(this.bassNoteArr[count - 1].sound);
@@ -180,7 +215,7 @@ const Game = function() {
         fillEightArr:function(){
             let y = -885;
             let count = 0;
-            while(this.eightNoteArr.length < 36){
+            while(this.eightNoteArr.length < this.eightArr.length){
                 this.eightNoteArr.push(new Game.Note(this.xEightPosArr[count], y, this.eightArr[count]));
                 count += 1;
                 
@@ -292,6 +327,10 @@ Game.Player.prototype = {
     //         this.velocity_y -= 15;
     //     }
     // },
+
+    hitNote:function() {
+        this.color = '#' + Math.floor(Math.random() * 16777216).toString(16);
+    },
 
     moveLeft:function() { 
         this.velocity_x -= 0.75;
