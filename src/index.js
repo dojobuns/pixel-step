@@ -18,9 +18,34 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     let render = function() {
 
-        // display.fill(game.world.background_color);// Clear background to game's background color.
+        display.fill(game.world.background_color);// Clear background to game's background color.
         // display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
         // noteDrop();
+
+        game.world.noteArr.forEach(note => {
+            if(note.y < 120 && !note.hit){
+                display.drawNote(note);
+            } else if(game.world.noteArr[game.world.noteArr.length - 1].y > 118){
+                game.world.gameEndMessage();
+                game.world.gameEnd();
+                game.world.backgroundTrack.play();
+            }
+        })
+
+        game.world.bassNoteArr.forEach(note => {
+            if(note.y < 120 && !note.hit) {
+                display.drawNote(note);
+            }
+        })
+
+        game.world.eightNoteArr.forEach(note => {
+            if(note.y < 120 && !note.hit) {
+                display.drawNote(note);
+            }
+        })
+
+        display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
+
 
         document.getElementById('score-container').innerHTML = (game.world.score === 0) ? (
             '0%'
@@ -82,35 +107,35 @@ document.addEventListener('DOMContentLoaded', function(e) {
         game.update();
     };
 
-    let noteDrop = function() {
-        display.fill(game.world.background_color);
+    // let noteDrop = function() {
+        // display.fill(game.world.background_color);
 
-        game.world.noteArr.forEach(note => {
-            if(note.y < 120 && !note.hit){
-                display.drawNote(note);
-            } else if(game.world.noteArr[game.world.noteArr.length - 1].y > 118){
-                game.world.gameEndMessage();
-                game.world.gameEnd();
-                game.world.backgroundTrack.play();
-            }
-        })
+        // game.world.noteArr.forEach(note => {
+        //     if(note.y < 120 && !note.hit){
+        //         display.drawNote(note);
+        //     } else if(game.world.noteArr[game.world.noteArr.length - 1].y > 118){
+        //         game.world.gameEndMessage();
+        //         game.world.gameEnd();
+        //         game.world.backgroundTrack.play();
+        //     }
+        // })
 
-        game.world.bassNoteArr.forEach(note => {
-            if(note.y < 120 && !note.hit) {
-                display.drawNote(note);
-            }
-        })
+        // game.world.bassNoteArr.forEach(note => {
+        //     if(note.y < 120 && !note.hit) {
+        //         display.drawNote(note);
+        //     }
+        // })
 
-        game.world.eightNoteArr.forEach(note => {
-            if(note.y < 120 && !note.hit) {
-                display.drawNote(note);
-            }
-        })
+        // game.world.eightNoteArr.forEach(note => {
+        //     if(note.y < 120 && !note.hit) {
+        //         display.drawNote(note);
+        //     }
+        // })
 
-        display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
+        // display.drawRectangle(game.world.player.x, game.world.player.y, game.world.player.width, game.world.player.height, game.world.player.color);
 
-        display.render();
-    }
+        // display.render();
+    // }
 
     let controller = new Controller();
     let display = new Display(document.querySelector('canvas'));
@@ -184,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
             document.getElementById('score-container').classList.remove('playing');
 
-            setInterval(() => noteDrop(), 1);
+            // setInterval(() => noteDrop(), 1);
     })
 
     document.getElementById('naruto').addEventListener('click', () => {
@@ -193,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
         game.world.song = 'naruto';
 
             game.world.fillNarutoNote();
+            // game.world.fillNarutoEight();
             game.world.backgroundTrack.pause();
 
             document.getElementById('start-menu').classList.add('playing');
@@ -202,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
             document.getElementById('score-container').classList.remove('playing');
 
-            setInterval(() => noteDrop(), 1);
+            // setInterval(() => noteDrop(), 1);
     })
     game.world.backgroundTrack.loop = true;
     game.world.backgroundTrack.volume = 0.3;

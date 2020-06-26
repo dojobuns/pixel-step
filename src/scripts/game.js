@@ -90,14 +90,14 @@ const Game = function() {
             'b3.mp3', 'fs.mp3', 'fs.mp3', 'd.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'd.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'fs.mp3', 'd.mp3', //102
             'b3.mp3', 'cs.mp3', 'd.mp3', 'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'e.mp3', 'e.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3',  //115
 
-            'd.mp3', 'a3.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', //123
+            'd.mp3', 'a3.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', //123 EIGHTS START HERE
             'e.mp3', 'a3.mp3', 'cs.mp3', 'e.mp3', 'g.mp3', 'fs.mp3', 'e.mp3', 'fs.mp3', //131
 
             'e.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //139
             'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'fs.mp3', //144
 
             'd.mp3', 'a3.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', //152
-            'e.mp3', 'a3.mp3', 'cs.mp3', 'e.mp3', 'g.mp3', 'fs.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'fs.mp3', //162
+            'e.mp3', 'a3.mp3', 'cs.mp3', 'e.mp3', 'g.mp3', 'fs.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', //162
             'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //168
             'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'fs.mp3', //173
 
@@ -114,9 +114,23 @@ const Game = function() {
         narutoBassArr: [
 
         ],
-        narutoEightArr: [
-
-        ],
+        // narutoEightArr: [
+        //     'a3.mp3', 'd3.mp3', 'a3.mp3', 'd.mp3', 'd.mp3', 'd3.mp3', 'b3.mp3', 
+        //     'b3.mp3', 'e3.mp3', 'a3.mp3', 'cs.mp3', 'cs.mp3', 'fs3.mp3', 'b3.mp3', 'b3.mp3', 'a3.mp3', 'fs3.mp3',
+        //     'd.mp3', 'd.mp3', 'a3.mp3', 'd3.mp3', 'd.mp3', 'd.mp3', 'a3.mp3', 'd3.mp3', 
+        //     'a3.mp3', 'a3.mp3', 'e3.mp3', 'b3.mp3', 'b3.mp3', 'a3.mp3', 'd3.mp3', 'a3.mp3', 
+        //     'd.mp3', 'd.mp3', 'd3.mp3', 'b3.mp3', 'b3.mp3', 'e3.mp3', 'a3.mp3', 'cs.mp3', 'cs.mp3', 'fs3.mp3', 'cs.mp3', 'b3.mp3', 'a3.mp3', 'fs3.mp3', 
+        //     'd.mp3', 'd.mp3', 'a3.mp3', 'd3.mp3', 'd.mp3', 'd.mp3', 'a3.mp3', 'd3.mp3',
+        //     'a3.mp3', 'a3.mp3', 'e3.mp3', 'b3.mp3', 'b3.mp3', 'a3.mp3', 'd3.mp3', 'a3.mp3', 
+        //     'd.mp3', 'd.mp3', 'd3.mp3', 'b3.mp3', 'b3.mp3', 'e3.mp3', 'a3.mp3', 'cs.mp3', 'cs.mp3', 'cs.mp3', 'cs.mp3', 'cs.mp3', 'b3.mp3', 'a3.mp3', 'fs3.mp3', 
+        //     'd.mp3', 'd.mp3', 'a3.mp3', 'd3.mp3', 'd.mp3', 'd.mp3', 'a3.mp3', 'd3.mp3', 
+        //     'a3.mp3', 'a3.mp3', 'e3.mp3', 'b3.mp3', 'b3.mp3',
+        // ],
+        // narutoxEightPosArr:[
+        //     55, 40, 55, 70, 70, 60, 60, 
+        //     60, 40, 50, 60, 75, 70, 70, 
+        //     60, 55, 50, 85, 80, 55, 50, 85, 80, 55, 50,
+        // ],
         narutoXPosArr: [
             50, 45, 50, 60, 45, 50, 45, 50, 60, 45, 50,
             60, 45, 60, 65, 45, 65, 75, 80, 75, 65, 60,
@@ -137,13 +151,28 @@ const Game = function() {
             65, 45, 55, 65, 80, 75, 65, 75,
 
             65, 60, 90, 85, 60, 90, 85, 60,
+            60, 55, 60, 65, 75,
+
+            60, 45, 60, 75, 75, 65, 60, 65,
+            65, 45, 55, 65, 80, 75, 75, 75 , 65, 60,
+            90, 85, 60, 90, 85, 60, 
+            60, 55, 60, 65, 75,
+
+            60, 50, 60, 75, 75, 65, 60, 65,
+            65, 45, 55, 65, 65, 80, 85, 75, 65, 60,
+            90, 85, 60, 90, 85, 60,
+            60, 55, 60, 65, 60, 
+
+            85, 75, 65, 65, 85, 75, 65, 65, 90, 75, 65, 60,
+            50, 55, 60, 60, 75, 65, 60,
+            50, 50, 45, 50, 60, 45, 50, 45, 50, 60,
+            45, 50, 45, 60, 65
+
         ],
         narutoxBassPosArr:[
 
         ],
-        narutoxEightPosArr:[
-
-        ],
+      
 
         fillNarutoNote:function(){
             let y = 0;
@@ -152,9 +181,9 @@ const Game = function() {
                 this.noteArr.push(new Game.Note(this.narutoXPosArr[count], y, this.narutoMelodyArr[count]));
                 count += 1;
 
-                if(count < 4 || count === 73 || count === 90 || count === 94 || count === 98 || count === 100  || (count >= 121 && count <= 122) || (count >= 129 && count <= 130)){
+                if(count < 4 || count === 73 || count === 90 || count === 94 || count === 98 || count === 100  || (count >= 121 && count <= 122) || (count >= 129 && count <= 130) || (count >= 150 && count <= 151) || (count >= 158 && count <= 159) || (count >= 179 && count <= 180) || (count >= 185 && count <= 186) || count === 203 || count === 207 || count === 211 || (count >= 223 && count <= 225) || (count >= 227 &&  count <= 230) || (count >= 232 &&  count <= 235)){
                     y -= 5;
-                } else if(count === 4 || count === 25 || count === 26 || count === 29 || count === 30 || count === 32 || count === 33 || count === 46 || count === 74 || count === 92 || count === 96){
+                } else if(count === 4 || count === 25 || count === 26 || count === 29 || count === 30 || count === 32 || count === 33 || count === 46 || count === 74 || count === 92 || count === 96 || count === 204 || count === 208 || count === 212 || count === 226){
                     y -= 15;
                 } else if((count >= 5 && count <= 8) || count === 10 || count === 20 || count === 21 || (count >= 40 && count <= 43) || count === 45 || (count >= 64 && count <= 65) || (count >= 67 && count <= 68) || (count >= 70 && count <= 71)){
                     y -= 5;
@@ -164,13 +193,31 @@ const Game = function() {
                     y -= 10;
                 } else if (count === 28 || count === 38 || count == 66) {
                     y -= 30;
-                } else if(count === 50 || count === 53 || (count >= 56 && count <= 57) || count === 78 || count === 81 || (count >= 84 && count <= 85) || count === 89 || count === 102 || (count >= 105 && count <= 106) || (count >= 109 && count <= 111) || count === 123 || count === 133 || count === 136 || count === 139){
+                } else if(count === 50 || count === 53 || (count >= 56 && count <= 57) || count === 78 || count === 81 || (count >= 84 && count <= 85) || count === 89 || count === 102 || (count >= 105 && count <= 106) || (count >= 109 && count <= 111) || count === 123 || count === 133 || count === 136 || (count >= 139 && count <= 140) || count === 152 || count === 162 || count === 165 || (count >= 168 && count <= 169) || count === 181 || count === 191 || count === 194 || (count >= 197 && count <= 198) || count === 202 || count === 214 || (count >= 217 && count <= 218)){
                     y -= 20;
-                } else if(count === 69 || count === 72 || (count >= 75 && count <= 77) || (count >= 79 && count <= 80) || (count >= 82 && count <= 83) || (count >= 86 && count <= 88) || count === 91 || count === 93 || count === 95 || count === 97 || count === 99 || count === 101 || (count >= 103 && count <= 104) || (count >= 107 && count <= 108) || (count >= 112 && count <= 120) || (count >= 124 && count <= 128) || (count >= 131 && count <= 132) || (count >= 134 && count <= 135) || (count >= 137 && count <= 138)){
+                } else if(count === 69 || count === 72 || (count >= 75 && count <= 77) || (count >= 79 && count <= 80) || (count >= 82 && count <= 83) || (count >= 86 && count <= 88) || count === 91 || count === 93 || count === 95 || count === 97 || count === 99 || count === 101 || (count >= 103 && count <= 104) || (count >= 107 && count <= 108) || (count >= 112 && count <= 120) || (count >= 124 && count <= 128) || (count >= 131 && count <= 132) || (count >= 134 && count <= 135) || (count >= 137 && count <= 138) || (count >= 141 && count <= 149) || (count >= 153 && count <= 157) || (count >= 160 && count <= 161) || (count >= 163 && count <= 164) || (count >= 166 && count <= 167) || (count >= 170 && count <= 178) || (count >= 182 && count <= 184) || (count >= 187 && count <= 190) || (count >= 192 && count <= 193) || (count >= 195 && count <= 196) || (count >= 199 && count <= 201) || (count >= 205 && count <= 206) || (count >= 209 && count <= 210) || count === 213 || (count >= 215 && count <= 216) || (count >= 219 && count <= 222) || count === 231 || count === 236){
                     y -= 10;
                 }
             }
         },
+
+        // fillNarutoEight:function(){
+        //     let y = -1335;
+        //     let count = 0;
+        //     while (this.eightNoteArr.length < this.narutoEightArr.length){
+        //         this.eightNoteArr.push(new Game.Note(this.narutoxEightPosArr[count], y, this.narutoEightArr[count]));
+        //         count += 1;
+
+        //         if(count < 7 || (count >= 8 && count <= 19) || (count >= 21 && count <= 23) || count === 25 || (count >= 27 && count <= 36)) {
+        //             y -= 10;
+        //         } else if(count === 7 || count === 26){
+        //             y -= 20;
+        //         } else if(count === 20 || count === 24){
+        //             y -= 15;
+        //         }
+
+        //     }
+        // },
 
         restartGame: function(){
             this.noteArr = [];
@@ -318,7 +365,7 @@ const Game = function() {
             if(this.song === 'tremor'){
                 this.score += (100 / (this.melodyArr.length + this.bassArr.length + this.eightArr.length));
             } else if( this.song === 'naruto'){
-                this.score += (100 / (this.narutoMelodyArr.length + this.narutoBassArr.length + this.narutoEightArr.length));
+                this.score += (100 / (this.narutoMelodyArr.length ));
             }
             // this.score += 1;
         },
