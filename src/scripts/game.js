@@ -232,7 +232,7 @@ const Game = function() {
 
         gameEndMessage:function(){
             let message = '';
-            debugger;
+            // debugger;
             if(this.score >= 99.8){
                 message = 'WOW! PERFECT SCORE! PRESS SPACEBAR TO TRY AGAIN'
             } else if(this.score >= 90 && this.score < 99.8){
