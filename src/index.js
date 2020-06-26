@@ -169,6 +169,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     document.getElementById('tremor').addEventListener('click', () => {
         game.world.restartGame();
+
+        game.world.song = 'tremor';
+
             game.world.fillNoteArr();
             game.world.fillBassArr();
             game.world.fillEightArr();
@@ -186,6 +189,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     document.getElementById('naruto').addEventListener('click', () => {
         game.world.restartGame();
+
+        game.world.song = 'naruto';
+
             game.world.fillNarutoNote();
             game.world.backgroundTrack.pause();
 

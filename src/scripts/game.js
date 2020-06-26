@@ -12,6 +12,7 @@ const Game = function() {
         width: 150,
         score: 0,
         backgroundTrack: new Audio('Eric Skiff - A Night Of Dizzy Spells.mp3'),
+        song: '',
 
         melodyArr: [
             'a.mp3', 'gs.mp3', 'g.mp3', 'fs.mp3', 'fs.mp3', 'gs.mp3', 'a.mp3', 'fs.mp3', 'fs5.mp3', 
@@ -85,6 +86,30 @@ const Game = function() {
             'fs.mp3', 'd.mp3', 'e.mp3', 'e.mp3', 'fs.mp3', 'd.mp3', 'd.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', 'a.mp3', 'a.mp3', //74
             'e.mp3', 'cs.mp3', 'e.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //84
             'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'd.mp3', //89
+
+            'b3.mp3', 'fs.mp3', 'fs.mp3', 'd.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'd.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'fs.mp3', 'd.mp3', //102
+            'b3.mp3', 'cs.mp3', 'd.mp3', 'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'e.mp3', 'e.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3',  //115
+
+            'd.mp3', 'a3.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', //123
+            'e.mp3', 'a3.mp3', 'cs.mp3', 'e.mp3', 'g.mp3', 'fs.mp3', 'e.mp3', 'fs.mp3', //131
+
+            'e.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //139
+            'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'fs.mp3', //144
+
+            'd.mp3', 'a3.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', //152
+            'e.mp3', 'a3.mp3', 'cs.mp3', 'e.mp3', 'g.mp3', 'fs.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'fs.mp3', //162
+            'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //168
+            'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'fs.mp3', //173
+
+            'd.mp3', 'a3.mp3', 'd.mp3', 'fs.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', 'e.mp3', //181
+            'e.mp3', 'a3.mp3', 'cs.mp3', 'e.mp3', 'e.mp3', 'g.mp3', 'a.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', //191
+            'b.mp3', 'a.mp3', 'd.mp3', 'b.mp3', 'a.mp3', 'd.mp3', //197
+            'd.mp3', 'cs.mp3', 'd.mp3', 'e.mp3', 'd.mp3', //202
+
+            'a.mp3', 'fs.mp3', 'e.mp3', 'e.mp3', 'a.mp3', 'fs.mp3', 'e.mp3', 'e.mp3', 'b.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', //214
+            'b3.mp3', 'cs.mp3', 'd.mp3', 'd.mp3', 'fs.mp3', 'e.mp3', 'd.mp3', //221
+            'b3.mp3', 'b3.mp3', 'a3.mp3', 'b3.mp3', 'd.mp3', 'a3.mp3', 'b3.mp3', 'a3.mp3', 'b3.mp3', 'd.mp3', //231
+            'a3.mp3', 'b3.mp3', 'a3.mp3', 'd.mp3', 'e.mp3', //236
         ],
         narutoBassArr: [
 
@@ -104,6 +129,14 @@ const Game = function() {
             75, 60, 65, 65, 75, 60, 60, 75, 65, 60, 65, 85, 85,
             65, 55, 65, 60, 90, 85, 60, 90, 85, 60, 
             60, 55, 60, 65, 60,
+
+            50, 75, 75, 60, 60, 75, 75, 60, 60, 90, 85, 75, 60,
+            50, 55, 60, 60, 55, 60, 65, 65, 65, 75, 65, 60, 65,
+
+            60, 45, 60, 75, 75, 65, 60, 65,
+            65, 45, 55, 65, 80, 75, 65, 75,
+
+            65, 60, 90, 85, 60, 90, 85, 60,
         ],
         narutoxBassPosArr:[
 
@@ -119,9 +152,9 @@ const Game = function() {
                 this.noteArr.push(new Game.Note(this.narutoXPosArr[count], y, this.narutoMelodyArr[count]));
                 count += 1;
 
-                if(count < 4 || count === 73){
+                if(count < 4 || count === 73 || count === 90 || count === 94 || count === 98 || count === 100  || (count >= 121 && count <= 122) || (count >= 129 && count <= 130)){
                     y -= 5;
-                } else if(count === 4 || count === 25 || count === 26 || count === 29 || count === 30 || count === 32 || count === 33 || count === 46 || count === 74){
+                } else if(count === 4 || count === 25 || count === 26 || count === 29 || count === 30 || count === 32 || count === 33 || count === 46 || count === 74 || count === 92 || count === 96){
                     y -= 15;
                 } else if((count >= 5 && count <= 8) || count === 10 || count === 20 || count === 21 || (count >= 40 && count <= 43) || count === 45 || (count >= 64 && count <= 65) || (count >= 67 && count <= 68) || (count >= 70 && count <= 71)){
                     y -= 5;
@@ -131,9 +164,9 @@ const Game = function() {
                     y -= 10;
                 } else if (count === 28 || count === 38 || count == 66) {
                     y -= 30;
-                } else if(count === 50 || count === 53 || (count >= 56 && count <= 57) || count === 78 || count === 81 || (count >= 84 && count <= 85) || count === 89){
+                } else if(count === 50 || count === 53 || (count >= 56 && count <= 57) || count === 78 || count === 81 || (count >= 84 && count <= 85) || count === 89 || count === 102 || (count >= 105 && count <= 106) || (count >= 109 && count <= 111) || count === 123 || count === 133 || count === 136 || count === 139){
                     y -= 20;
-                } else if(count === 69 || count === 72 || (count >= 75 && count <= 77) || (count >= 79 && count <= 80) || (count >= 82 && count <= 83) || (count >= 86 && count <= 88)){
+                } else if(count === 69 || count === 72 || (count >= 75 && count <= 77) || (count >= 79 && count <= 80) || (count >= 82 && count <= 83) || (count >= 86 && count <= 88) || count === 91 || count === 93 || count === 95 || count === 97 || count === 99 || count === 101 || (count >= 103 && count <= 104) || (count >= 107 && count <= 108) || (count >= 112 && count <= 120) || (count >= 124 && count <= 128) || (count >= 131 && count <= 132) || (count >= 134 && count <= 135) || (count >= 137 && count <= 138)){
                     y -= 10;
                 }
             }
@@ -153,9 +186,9 @@ const Game = function() {
         gameEndMessage:function(){
             let message = '';
             // debugger;
-            if(this.score > 99){
+            if(this.score >= 100){
                 message = 'WOW! PERFECT SCORE! PRESS SPACEBAR TO TRY AGAIN'
-            } else if(this.score >= 90 && this.score <= 99){
+            } else if(this.score >= 90 && this.score < 100){
                 message = 'SO CLOSE TO PERFECTION! PRESS SPACEBAR TO TRY AGAIN'
             } else if(this.score >= 80 && this.score <= 89) {
                 message = 'PRETTY GOOD, BUT I BET YOU CAN DO BETTER. PRESS SPACEBAR TO TRY AGAIN'
@@ -281,7 +314,12 @@ const Game = function() {
         },
 
         scoreUpdate:function() {
-            this.score += (100 / (this.melodyArr.length + this.bassArr.length + this.eightArr.length));
+
+            if(this.song === 'tremor'){
+                this.score += (100 / (this.melodyArr.length + this.bassArr.length + this.eightArr.length));
+            } else if( this.song === 'naruto'){
+                this.score += (100 / (this.narutoMelodyArr.length + this.narutoBassArr.length + this.narutoEightArr.length));
+            }
             // this.score += 1;
         },
 
