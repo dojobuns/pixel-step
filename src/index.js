@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
     document.getElementById('naruto').classList.add('playing');
     document.getElementById('top-rule').classList.add('playing');
     document.getElementById('bottom-rule').classList.add('playing');
+    document.getElementById('third-rule').classList.add('playing');
+    document.getElementById('fourth-rule').classList.add('playing');
 
     document.body.onkeyup = function(e){
         if(e.keyCode === 32){
@@ -169,6 +171,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('naruto').classList.remove('playing');
             document.getElementById('top-rule').classList.remove('playing');
             document.getElementById('bottom-rule').classList.remove('playing');
+            document.getElementById('third-rule').classList.remove('playing');
+            document.getElementById('fourth-rule').classList.remove('playing');
+
 
             if(document.getElementById('pixel-logo').classList.contains('playing')){
                 document.getElementById('pixel-logo').classList.remove('playing');
@@ -212,6 +217,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('naruto').classList.add('playing');
             document.getElementById('top-rule').classList.add('playing');
             document.getElementById('bottom-rule').classList.add('playing');
+            document.getElementById('third-rule').classList.add('playing');
+            document.getElementById('fourth-rule').classList.add('playing');
+
 
             document.getElementById('score-container').classList.remove('playing');
 
@@ -233,6 +241,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('naruto').classList.add('playing');
             document.getElementById('top-rule').classList.add('playing');
             document.getElementById('bottom-rule').classList.add('playing');
+            document.getElementById('third-rule').classList.add('playing');
+            document.getElementById('fourth-rule').classList.add('playing');
 
             document.getElementById('score-container').classList.remove('playing');
 
