@@ -6,6 +6,10 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+body {
+    background-color: black;
+}
+
 #tremor {
     position: absolute;
     color: yellow;
@@ -93,4 +97,31 @@
 
 #green {
     margin-left: -300px;
+}
+
+#canvas {
+    border: 6px solid yellow;
+    border-radius: 10px;
+}
+
+a {
+    position: absolute;
+    text-decoration: none;
+    font-size: 36px;
+    margin-left: 5px;
+    margin-top: 10px;
+    color: yellow;
+    z-index: 10;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.linkedin {
+    margin-left: 200px;
+}
+
+.github {
+    margin-left: 235px;
 }
