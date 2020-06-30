@@ -1,4 +1,4 @@
-# beat_step
+# Pixel Beat
 
 ## Overview
 
