@@ -77,7 +77,7 @@ collideObject:function(object){
 # Example Images
 ![Intro Page](https://github.com/dojobuns/pixel-beat/blob/master/src/images/portfoliositepixel.png)
 ![Score Page](https://github.com/dojobuns/pixel-beat/blob/master/src/images/soclosetoperfectscorepixel.png)
-![Gameplay](https://github.com/dojobuns/MapMyWalk/blob/master/app/assets/images/thirteenscorepixel.png)
+![Gameplay](https://github.com/dojobuns/pixel-beat/blob/master/src/images/thirteenscorepixel.png)
 
 # Credits
 * Music: Eric Skiff - Song Name - A Night Of Dizzy Spells
