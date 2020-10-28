@@ -3,7 +3,7 @@ const Controller = require('./scripts/controller');
 const Display = require('./scripts/display');
 const Engine = require('./scripts/engine');
 const Game = require('./scripts/game');
-var webAudioPeakMeter = require('web-audio-peak-meter');
+// var webAudioPeakMeter = require('web-audio-peak-meter');
 
 document.addEventListener('DOMContentLoaded', function(e) {
 
@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     document.getElementById('end-menu').classList.add('playing');
     document.getElementById('tremor').classList.add('playing');
     document.getElementById('naruto').classList.add('playing');
+    document.getElementById('song-rule').classList.add('playing');
     document.getElementById('top-rule').classList.add('playing');
     document.getElementById('bottom-rule').classList.add('playing');
     document.getElementById('third-rule').classList.add('playing');
@@ -169,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('start-menu').classList.add('playing');
             document.getElementById('tremor').classList.remove('playing');
             document.getElementById('naruto').classList.remove('playing');
+            document.getElementById('song-rule').classList.remove('playing');
             document.getElementById('top-rule').classList.remove('playing');
             document.getElementById('bottom-rule').classList.remove('playing');
             document.getElementById('third-rule').classList.remove('playing');
@@ -215,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('pixel-logo').classList.add('playing');
             document.getElementById('tremor').classList.add('playing');
             document.getElementById('naruto').classList.add('playing');
+            document.getElementById('song-rule').classList.add('playing');
             document.getElementById('top-rule').classList.add('playing');
             document.getElementById('bottom-rule').classList.add('playing');
             document.getElementById('third-rule').classList.add('playing');
@@ -239,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
             document.getElementById('pixel-logo').classList.add('playing');
             document.getElementById('tremor').classList.add('playing');
             document.getElementById('naruto').classList.add('playing');
+            document.getElementById('song-rule').classList.add('playing');
             document.getElementById('top-rule').classList.add('playing');
             document.getElementById('bottom-rule').classList.add('playing');
             document.getElementById('third-rule').classList.add('playing');
@@ -251,13 +255,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
     game.world.backgroundTrack.loop = true;
     game.world.backgroundTrack.volume = 0.3;
     game.world.backgroundTrack.play();
-    
-    // var myMeterElement = document.getElementById('my-peak-meter');
-    // var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    // var sourceNode = audioCtx.createMediaElementSource(game.world.backgroundTrack);
-    // sourceNode.connect(audioCtx.destiation);
-    // var meterNode = webAudioPeakMeter.createMeterNode(sourceNode, audioCtx);
-    // webAudioPeakMeter.createMeter(myMeterElement, meterNode, {});
 
     engine.start();
 
