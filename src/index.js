@@ -186,9 +186,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
                 document.getElementById('end-menu').classList.add('playing');
             }
 
-            // if(game.world.backgroundTrack.paused) {
-            //     game.world.backgroundTrack.play();
-            // }
+            if(game.world.backgroundTrack.paused) {
+                game.world.backgroundTrack.play();
+            }
 
             if(!document.getElementById('score-container').classList.contains('playing')) {
                 document.getElementById('score-container').classList.add('playing');
