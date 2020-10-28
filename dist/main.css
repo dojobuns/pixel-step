@@ -8,16 +8,10 @@
 body {
   background-color: black; }
 
-/* #song-titles {
-  display: flex;
-  justify-content: space-between;
-  justify-self: center;
-} */
 #tremor {
   position: absolute;
   color: yellow;
   font-size: 36px;
-  margin-top: 10px;
   margin-top: 400px;
   margin-left: -250px;
   height: 30px;
@@ -104,10 +98,10 @@ a:hover {
   cursor: pointer; }
 
 .linkedin {
-  margin-left: 270px; }
+  margin-left: 250px; }
 
 .github {
-  margin-left: 355px; }
+  margin-left: 345px; }
 
 .rules {
   color: yellow;

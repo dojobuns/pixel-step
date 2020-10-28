@@ -479,7 +479,7 @@ Game.Note = function(x, y, audioFile){
     this.velocity_y = 1;
 
     this.hit = false;
-    this.sound = new Audio('assets/' + audioFile);
+    this.sound = new Audio(audioFile);
 }
 
 Game.Note.prototype = {
