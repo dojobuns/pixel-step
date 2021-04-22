@@ -18,7 +18,7 @@ Features of the game include:
 
 * Can go back to the song menu if you press spacebar at anytime
 
-# Code Snippets
+# Code Snippet
 
 * Checked for each note, if any of its corners intersect with the paddle at time, then play the specific note of that note block.  Also changes the hit property of the note block class to true so that it won't constantly play the note/only hit the paddle once.  Once it hits the paddle, it stops rendering the note to let you know that you caught the note.
 
