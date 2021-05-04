@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     let update = function() {
         if(controller.left.active) {
             game.world.player.moveLeft();
-            // console.log(game.world.player.x);f
+            // console.log(game.world.player.x);
             // console.log(game.world.player.x + 14);
             // console.log(game.world.noteArr[1].y)
         }
